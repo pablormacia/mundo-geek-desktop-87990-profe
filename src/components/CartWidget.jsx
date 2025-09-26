@@ -1,6 +1,8 @@
+import styles from './CartWidget.module.css'
+
 const CartWidget = () => {
     return(
-        <p>Ícono del carrito</p>
+        <span className={`material-icons ${styles.shoppingCart}`}>shopping_cart</span>
     )
 }
 
