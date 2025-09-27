@@ -1,14 +1,15 @@
-/* const ItemListContainer = (props) => {
-    return(
-        <h1>{props.message}</h1>
-    )
-}
+import { useGetCategories } from "../hooks/useGetCategories"
 
-export default ItemListContainer */
+const ItemListContainer = () => {
+    const {categories,loading} = useGetCategories()
 
-const ItemListContainer = ({message}) => {
+    if (loading) return <p>Cargando...</p>
     return(
-        <h1>{message}</h1>
+        <div>
+            {
+            categories.map(((category,index)=><p key={index}>{category.title}</p>))
+            }
+        </div>
     )
 }
 
