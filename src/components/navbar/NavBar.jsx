@@ -1,6 +1,7 @@
 import CartWidget from "../cart-widget/CartWidget"
 import styles from './NavBar.module.css'
 import logo from '../../assets/logo.png'
+import { NavLink } from "react-router-dom"
 
 const NavBar = () => {
     console.log("Componente Navbar montado")
@@ -11,8 +12,8 @@ const NavBar = () => {
             </div>
             
             <ul className={styles.navBarItemsContainer}>
-                <li>Home</li>
-                <li>Categorías</li>
+                <NavLink to="/"><li>Home</li></NavLink>    
+                <NavLink to="/categorias"><li>Categorías</li></NavLink>
                 <li>Contacto</li>
             </ul>
             <CartWidget />

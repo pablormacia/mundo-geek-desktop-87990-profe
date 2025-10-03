@@ -9,7 +9,7 @@ export function useGetCategories() {
 
     useEffect(() => {
         const getCategories = () => {
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve) => {
                 setTimeout(() => {
                     resolve(local_categories);
                 }, 2000);
