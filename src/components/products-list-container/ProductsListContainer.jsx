@@ -1,14 +1,14 @@
-import { useGetProductsByCategory } from "../../hooks/useGetProducts"
+import { useGetProducts } from "../../hooks/useGetProducts"
 import ProductItem from "../product-item/ProductItem"
-import NavBar from "../navbar/NavBar"
 import { useParams } from "react-router-dom"
 
-const ProductsListContainer = () => {
-    const {id} = useParams()
-    const { productsFilteredByCategory, loading } = useGetProductsByCategory(id)
-    console.log("Products y loading desde hook: ", productsFilteredByCategory, loading)
+const CategoriesListContainer = () => {
+    /* const params = useParams()
+    console.log("Params: ", params) */
+    const {categoryId} = useParams()
+    const { productsFilteredByCategory, loading } = useGetProducts(categoryId)
 
-    if (loading) return <p>Cargando productos...</p>
+    if (loading) return <p>Cargando...</p>
 
     return (
         <>
@@ -19,4 +19,4 @@ const ProductsListContainer = () => {
     )
 }
 
-export default ProductsListContainer
+export default CategoriesListContainer

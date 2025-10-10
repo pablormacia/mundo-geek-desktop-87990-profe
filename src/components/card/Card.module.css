@@ -1,6 +1,6 @@
 .container{
-    background-color: var(--color-grayLight);
-    box-shadow: inset;
-    width: 200px;
-    padding: 8px
+    background-color: var(--color-whiteMedium);
+    border-radius: 1rem;
+    padding: 8px;
+    box-shadow: 5px 5px 10px 0px var(--color-grayLight);
 }

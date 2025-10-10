@@ -1,23 +1,32 @@
 import './App.css'
-import NavBar from './components/navbar/NavBar'
-import CategoryListContainer from './components/category-list-container/CategoryListContainer';
-import ProductsListContainer from './components/products-list-container/ProductsListContainer';
-import Home from './components/home/Home';
-import Card from './components/card/Card'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/navbar/NavBar'
+import Footer from './components/footer/Footer';
+import CategoriesListContainer from './components/categories-list-container/CategoriesListContainer'
+import ProductsListContainer from './components/products-list-container/ProductsListContainer';
+import ProductDetailContainer from './components/product-detail-container/ProductDetailContainer';
+import Contact from './components/contact/Contact';
+import Home from './components/home/Home';
+import { CartProvider } from './context/CartContext';
+import Cart from './components/cart/Cart';
+
 
 function App() {
-  /* let counter = 0 */
-  console.log("Componente App montado")
   return (
-    <BrowserRouter>
-    <NavBar />
-      <Routes>
-         <Route path="/" element={<Home />} />
-        <Route path="/categorias" element={<CategoryListContainer />} />
-        <Route path="/productos/:id" element={<ProductsListContainer />} />
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/categories" element={<CategoriesListContainer />} />
+          <Route path="/products/:categoryId" element={<ProductsListContainer />} />
+          <Route path="/product/:productId" element={<ProductDetailContainer />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 

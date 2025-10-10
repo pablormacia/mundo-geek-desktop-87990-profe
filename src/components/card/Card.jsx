@@ -1,9 +1,8 @@
 import styles from './Card.module.css'
 
-const Card = ({children})=>{
-    //console.log(props)
+const Card = ({children,className})=>{
     return(
-        <div className={styles.container}>
+        <div className={`${styles.container} ${className}`}>
             {children}
         </div>
     )
